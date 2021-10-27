@@ -1,0 +1,27 @@
+﻿
+
+    @using DrawIt2.ViewModel;
+    @model RoomViewModel;
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>@Model.RoomName</title>
+    </head>
+    <body>
+        <div>
+            <p><a href="@Url.Action("Index", "Room")"> Back to room list </a></p>
+            <br>
+            @*<h3>--- Draw what you whant ---</h3>*@
+            <h3>@Model.RoomName</h3>
+
+            <p>technical works</p>
+            <div style=" background-color:gray; border-width: 5px; border-color:black; align-content: center">
+                <canvas ></canvas>
+            </div>
+            
+            
+            <p>technical works2</p>
+</div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+﻿@using DrawIt2.ViewModel;
+@model IEnumerable<RoomViewModel>;
+
+@{
+    ViewData["Title"] = "QueueMenu";
+ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="display:flex;justify-content:space-between">
+    <h1>QueueMenu</h1>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Create Room
+    </button>
+</div>
+@{
+
+}
+<table class="table table-bordered">
+    <tr>
+        <th>name</th>
+        <th>usercount</th>
+        <th>#id</th>
+        <th>link</th>
+    </tr>
+    @foreach (RoomViewModel item in @Model)
+    {
+        <tr>
+            <th>@item.RoomName</th>
+            <th>@item.UserCount</th>
+            <th>@item.RoomId</th>
+            <th> <a href="@Url.Action("Room","Room", new {id = @item.RoomId })">text</a></th>
+        </tr>
+    }
+</table>
+@await Html.PartialAsync("~/Views/Home/Partials/CreateRoomModal.cshtml")
